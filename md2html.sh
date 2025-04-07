@@ -64,7 +64,7 @@ for input_md_file in $(find ${input_md_dir} -type f -name '*.md'); do
     # スタイル markdown-preview-enhanced
     pandoc -f markdown -t html5 --resource-path ${resource_path} --embed-resources --standalone -c ${css_file} ${input_md_file} > ${output_html}
     sed -i '' "s/<body>/<body\ for\=\"html-export\"><div\ class\=\"crossnote\ markdown-preview\">/" ${output_html}
-    sed -i '' "s/<\/body>/<\/dev><\/body>/" ${output_html}
+    sed -i '' "s/<\/body>/<\/div><\/body>/" ${output_html}
 
     echo 出力 ${output_html}
 done
